@@ -1,1 +1,1 @@
-web: gunicorn clinica.wsgi
+web: gunicorn "proyecto de vinculacion".clinica.wsgi
