@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block aplicacion %}
+
+<main>
+  <div class="d-flex align-items-center justify-content-center text-center p-3 mb-3 text-white bg-primary bg-gradient">
+    <img class="mr-3" src="{% static 'img/optometrista.svg' %}" alt="doctor" width="70" height="70">
+    <div class="lh-1">
+      <h1 class="h3 mb-1 text-white lh-1 py-1 border-top border-verde border-2">OPTICA+VISION</h1>
+      <small class="lead">
+        {% if user.is_authenticated %}
+        <a href="{% url 'productos:lista' %}" style="text-decoration: none;" class="text-success">
+        Entrar
+        </a>
+        {% else %}
+        <a href="{% url 'usuarios:entrar' %}" style="text-decoration: none;" class="text-success">
+        Iniciar Sesión
+        </a>
+        {% endif %}
+      </small>
+    </div> 
+  
+      <hr class="featurette-divider">
+      <footer class="container d-flex justify-content-center">
+        <p>Clinica UTM| {{date}}</p>
+      </footer>
+    </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'img/opto1.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/opto2.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+
+
+
+
+
+</main>
+
+{% endblock %}
